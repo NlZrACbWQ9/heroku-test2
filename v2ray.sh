@@ -13,5 +13,4 @@ mv config.json /etc/v2ray/config.json
 rm -rf /root/*
 echo "Done"
 
-envsubst < /root/config.json.tp > /root/config.json
-envsubst '\$PORT' < /root/nginx.template.conf > /root/nginx.conf
+
