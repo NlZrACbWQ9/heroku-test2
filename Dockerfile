@@ -1,6 +1,6 @@
-FROM --platform=${TARGETPLATFORM} alpine:latest
-ARG TARGETPLATFORM
-ARG TAG
+FROM alpine:latest
+ARG linux
+ARG 64
 COPY v2ray.sh /root/v2ray.sh
 
 WORKDIR /root
