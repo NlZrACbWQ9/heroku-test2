@@ -5,9 +5,7 @@ WORKDIR /root
 
 COPY v2ray.sh /root/v2ray.sh
 
-RUN set -ex \
-    && apt install -y --no-cache tzdata openssl ca-certificates \
-    && mkdir -p /etc/v2ray /usr/local/share/v2ray /var/log/v2ray \
+RUN mkdir -p /etc/v2ray /usr/local/share/v2ray /var/log/v2ray \
     # forward request and error logs to docker log collector
     && ln -sf /dev/stdout /var/log/v2ray/access.log \
     && ln -sf /dev/stderr /var/log/v2ray/error.log \
