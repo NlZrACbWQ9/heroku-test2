@@ -1,5 +1,5 @@
 #!/bin/sh
-sed "s/\$UUID/${UUID}/g" /root/config.json.tp > /etc/v2ray/config.json
+sed "s/\$UUID/${UUID}/g" /root/config.json.tp > /root/config.json
 sed "s/\$PORT/${PORT}/g" /root/nginx.template.conf > /root/nginx.conf
 # Run V2Ray
 if [[ $TUNNEL_TOKEN ]]; then
