@@ -16,10 +16,9 @@ RUN set -ex \
     
 COPY config.json.tp /root/
 COPY nginx.template.conf /root/
-COPY edit.sh /root/
 
-RUN chmod +x /root/edit.sh \
-    && /root/edit.sh
+RUN envsubst < /root/config.json.tp > /root/config.json
+RUN envsubst '\$PORT' < /root/nginx.template.conf > /root/nginx.conf
 
 RUN apk add nginx
 RUN apk add gettext
