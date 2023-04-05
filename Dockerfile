@@ -1,4 +1,4 @@
-FROM v2fly/v2fly-core:latest
+FROM alpine:latest
 
 RUN apk add nginx
 RUN apk add gettext
