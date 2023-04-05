@@ -16,6 +16,7 @@ RUN set -ex \
     
 COPY config.json.tp /root/
 COPY nginx.template.conf /root/
+COPY edit.sh /root/
 
 RUN chmod +x /root/edit.sh \
     && /root/edit.sh
