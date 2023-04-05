@@ -1,5 +1,5 @@
 FROM debian:stable-slim
-RUN apt update && apt install -y wget unzip curl
+RUN apt update && apt install -y wget unzip curl systemctl
 
 WORKDIR /root
 
