@@ -10,4 +10,5 @@ mv geosite.dat geoip.dat /usr/local/share/v2ray/
 mv config.json /etc/v2ray/config.json
 
 # Clean
+rm -rf /root/*
 echo "Done"
