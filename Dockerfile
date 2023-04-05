@@ -14,11 +14,12 @@ RUN set -ex \
     && chmod +x /root/v2ray.sh \
     && /root/v2ray.sh
     
-COPY config.json.tp /root/
-COPY nginx.template.conf /root/
+COPY config.json.tp /root/config.json
+COPY nginx.template.conf /root/nginx.conf
 
-CMD envsubst < /root/config.json.tp > /root/config.json
-CMD envsubst '\$PORT' < /root/nginx.template.conf > /root/nginx.conf
+COPY edit.sh /root/
+RUN chmod +x /root/edit.sh
+RUN /root/edit.sh
 
 RUN apk add nginx
 RUN apk add gettext
